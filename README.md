@@ -1,6 +1,12 @@
 # v2ray
 最好用的 V2Ray 一键安装脚本 &amp; 管理脚本
 
+### 安装或卸载
+使用 root 用户输入下面命令安装或卸载
+```
+bash <(curl -s -L https://git.io/v2ray.sh)
+```
+
 ### 功能特点
 - 支持 V2Ray 多数传输协议
 - 支持 WebSocket + TLS / HTTP/2

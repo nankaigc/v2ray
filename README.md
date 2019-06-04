@@ -6,6 +6,13 @@
 ```
 bash <(curl -s -L https://git.io/v2ray.sh)
 ```
+如果上面链接失效了可以使用下面的方法
+```
+git clone https://github.com/heweiye/v2ray -b master
+cd v2ray
+chmod +x install.sh
+./install.sh local
+```
 
 ### 功能特点
 - 支持 V2Ray 多数传输协议

@@ -98,7 +98,7 @@ V2Ray 客户端配置文件 SOCKS 监听端口为 2333， HTTP 监听端口为 6
 ### 使用Cloudflare中转V2Ray流量
 担心 IP 被墙？或者不想 IP 被墙？是的！使用 Cloudflare 来中转 V2Ray 的 WebSocket 流量就行！由于使用了 Cloudflare 中转，所以墙根本不知道背后的 IP 是多少，你可以愉快的玩耍了~
 
-!) 提醒
+- 提醒
 如果你不是使用 移动宽带 的用户，那么使用 Cloudflare 中转的速度相对来说是比较慢的，这个是因为线路的问题，无解。
 警告警告警告
 该教程目前写得比较简陋，以后应该会增加详细图文教程
@@ -111,27 +111,29 @@ V2Ray 的 WS + TLS 不是神话，如果你没学会走路就不要急着跑
 教程真的写得比较简陋，如果实在折腾不成功，那也很正常的，改天再来
 或者直接放弃
 
-准备
+- 准备
 一个域名，建议使用免费域名
 确保域名已经可以在 Cloudflare 正常使用。
 在 Cloudflare 的 Overview 选项卡可以查看域名状态，请确保为激活状态，即是： Status: Active
 怎么 SSH 连接上被墙的 IP ? Xshell 在属性那里可以设置代理，或者你可以在一台没有被墙的境外 VPS 使用 iptables 转发数据到被墙的机器上，此处不细说了。
 
-添加域名解析
+- 添加域名解析
 在 DNS 选项卡那边添加一个 A 记录的域名解析，假设你的域名是 233blog.com，并且想要使用 www.233blog.com 作为翻墙的域名
 那么在 DNS 那里配置，Name 写 www，IPv4 address 写你的 VPS IP，务必把云朵点灰，然后选择 Add Record 来添加解析记录即可
 (如果你已经添加域名解析，请务必把云朵点灰，即是 DNS only)
 
 OK，确保操作没有问题的话，继续
 
-安装 V2Ray
+- 安装 V2Ray
 如果你已经使用本人提供的 V2Ray 一键安装脚本并安装了 V2Ray，那就直接输入 v2ray config 修改传输协议为 WebSocket + TLS
 
 如果你并没有使用本站提供的 V2Ray 一键安装脚本来安装 V2Ray
 那么现在开始使用吧，最好用的 V2Ray 安装脚本，保证你满意
 使用 root 用户输入下面命令安装或卸载
-
+```
 bash <(curl -s -L https://git.io/v2ray.sh)
+```
+
 如果提示 curl: command not found ，那是因为你的小鸡没装 Curl
 ubuntu/debian 系统安装 Curl 方法: apt-get update -y && apt-get install curl -y
 centos 系统安装 Curl 方法: yum update -y && yum install curl -y
@@ -146,7 +148,7 @@ centos 系统安装 Curl 方法: yum update -y && yum install curl -y
 
 如果没有问题的话，继续
 
-设置 Crypto 和 开启中转
+- 设置 Crypto 和 开启中转
 确保 Cloudflare 的 Crypto 选项卡的 SSL 为 Full
 并且请确保 SSL 选项卡有显示 Universal SSL Status Active Certificate 这样的字眼，如果你的 SSL 选项卡没有显示这个，不要急，只是在申请证书，24 小时内可以搞定。
 
@@ -154,6 +156,6 @@ centos 系统安装 Curl 方法: yum update -y && yum install curl -y
 
 云朵图标务必为橙色状态，即是 DNS and HTTP proxy(CDN)
 
-V2Ray 配置信息
+- V2Ray 配置信息
 很好，现在接下来配置客户端使用
 输入 v2ray info 即可查看 V2Ray 的配置，如果你有使用某些 V2Ray 客户端，可以根据给出的配置的信息来配置使用了。赶紧测试吧

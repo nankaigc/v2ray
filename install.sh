@@ -921,7 +921,7 @@ install_v2ray() {
 		exit 1
 	fi
 
-	v2ray_download_link="https://github.com/v2ray/v2ray-core/releases/download/$v2ray_ver/v2ray-linux-${v2ray_bit}.zip"
+	v2ray_download_link="https://github.com/v2ray/v2ray-core/releases/download/v4.28.2/v2ray-linux-64.zip"
 
 	if ! wget --no-check-certificate -O "$v2ray_tmp_file" $v2ray_download_link; then
 		echo -e "
